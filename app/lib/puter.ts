@@ -2,10 +2,9 @@ import { create } from "zustand";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // const GEMINI_API_KEY = "AQ.Ab8RN6LnWNrc9qpQK_9M5cFVDEbz4S23egsi1n3diP_Cd5xc-g"; // ← Hardcoded here
-const GEMINI_API_KEY =
-  import.meta.env.VITE_GEMINI_API_KEY ||
-  "AQ.Ab8RN6LnWNrc9qpQK_9M5cFVDEbz4S23egsi1n3diP_Cd5xc-g";
-const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+const VITE_GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+console.log(VITE_GEMINI_API_KEY);
+const genAI = new GoogleGenerativeAI(VITE_GEMINI_API_KEY);
 declare global {
   interface Window {
     puter: {
