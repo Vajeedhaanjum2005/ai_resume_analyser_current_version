@@ -1,8 +1,8 @@
 import { create } from "zustand";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const GEMINI_API_KEY = "AQ.Ab8RN6IiH0YE7l6Hvq8_Z7YYwvJHTJVc2Hi3BclUMkaBTU91CA"; // ← Hardcoded here
-
+// const GEMINI_API_KEY = "AQ.Ab8RN6IiH0YE7l6Hvq8_Z7YYwvJHTJVc2Hi3BclUMkaBTU91CA"; // ← Hardcoded here
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "your-key-here";
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 declare global {
   interface Window {
